@@ -34,13 +34,6 @@ spec:
             value: "true"
           - name: "NEO4J_PLUGINS"
             value: "[\"apoc\"]"
-        resources:
-          requests:
-            memory: "128Mi"
-            cpu: "500m"
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         volumeMounts:
           - mountPath: "/data"
             name: neo4j-storage
