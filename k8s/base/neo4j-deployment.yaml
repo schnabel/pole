@@ -39,8 +39,8 @@ spec:
             memory: "128Mi"
             cpu: "500m"
           limits:
-            memory: "128Mi"
-            cpu: "500m"
+            memory: "4Gi"
+            cpu: "1000m"
         volumeMounts:
           - mountPath: "/data"
             name: neo4j-storage
