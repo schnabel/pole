@@ -7,14 +7,14 @@ spec:
     matchLabels:
       app: neo4j
   template:
-    volumes: 
-      - name: neo4j-storage
-        persistentVolumeClaim:
-          claimName: neo4j-pv-claim
     metadata:
       labels:
         app: neo4j
     spec:
+      volumes: 
+        - name: neo4j-storage
+          persistentVolumeClaim:
+            claimName: neo4j-pv-claim
       containers:
       - name: neo4j
         image: neo4j:community
