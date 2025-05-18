@@ -7,6 +7,10 @@ spec:
     matchLabels:
       app: neo4j
   template:
+    volumes: 
+      - name: neo4j-storage
+        persistentVolumeClaim:
+          claimName: neo4j-pv-claim
     metadata:
       labels:
         app: neo4j
@@ -19,7 +23,7 @@ spec:
         - containerPort: 7687
         env:
           - name: "NEO4J_AUTH"
-            value: "neo4j/mysecretpassword"
+            value: neo4j:mysecretpassword
           - name: "NEO4J_server_config_strict__validation_enabled"
             value: "false"
           - name: "NEO4J_apoc_export_file_enabled"
@@ -30,3 +34,13 @@ spec:
             value: "true"
           - name: "NEO4J_PLUGINS"
             value: "[\"apoc\"]"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "500m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        volumeMounts:
+          - mountPath: "/data"
+            name: neo4j-storage
