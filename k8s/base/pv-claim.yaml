@@ -3,9 +3,9 @@ kind: PersistentVolumeClaim
 metadata:
   name: neo4j-pv-claim
 spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
   resources:
     requests:
       storage: 3Gi
-  volumeMode: Filesystem
-  accessModes:
-    - ReadWriteOnce

@@ -3,12 +3,10 @@ kind: PersistentVolume
 metadata:
   name: neo4j-pv-volume
 spec:
+  storageClassName: manual
   capacity:
     storage: 10Gi
-  volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Recycle
-  storageClassName: manual
   hostPath:
     path: "/mnt/data"
