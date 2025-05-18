@@ -34,6 +34,3 @@ spec:
             value: "true"
           - name: "NEO4J_PLUGINS"
             value: "[\"apoc\"]"
-        volumeMounts:
-          - mountPath: "/data"
-            name: neo4j-storage
