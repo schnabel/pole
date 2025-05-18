@@ -23,7 +23,7 @@ spec:
         - containerPort: 7687
         env:
           - name: "NEO4J_AUTH"
-            value: neo4j:mysecretpassword
+            value: "neo4j/mysecretpassword"
           - name: "NEO4J_server_config_strict__validation_enabled"
             value: "false"
           - name: "NEO4J_apoc_export_file_enabled"
