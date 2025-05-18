@@ -7,10 +7,6 @@ spec:
     matchLabels:
       app: neo4j
   template:
-    volumes: 
-      - name: neo4j-storage
-        persistentVolumeClaim:
-          claimName: neo4j-pv-claim
     metadata:
       labels:
         app: neo4j
@@ -34,6 +30,3 @@ spec:
             value: "true"
           - name: "NEO4J_PLUGINS"
             value: "[\"apoc\"]"
-        volumeMounts:
-          - mountPath: "/data"
-            name: neo4j-storage
